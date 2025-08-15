@@ -9,6 +9,7 @@ export const useStorage = (key:string, initialValue:any) => {
         // 需要返回一个函数
         return () => {
             // 返回取消订阅
+            window.removeEventListener('storage', callback)
         }
     }
 

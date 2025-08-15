@@ -1,13 +1,14 @@
-import { useStorage } from "./hooks/useStorage.ts"
+import { useHistory } from "./hooks/useHistory";
 
-function App() {
-    const [count, setCount] = useStorage('count', 1)
+const App = () => {
+
+    const [url, push, replace] = useHistory()
     
-    return (
+    return(
         <>
-            <h1>Value: {count}</h1>
-            <button onClick={() => setCount(count + 1)}>+1</button>
-            <button onClick={() => setCount(count - 1)}>-1</button>
+            <h1>url: {url}</h1>
+            <button onClick={() => push('/A')}>push</button>
+            <button onClick={() => replace('/B')}>replace</button>
         </>
     )
 }
